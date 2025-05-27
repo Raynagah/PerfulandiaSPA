@@ -74,10 +74,15 @@ Base de Datos por Servicio:
 > IA
 
 > Postman
+
 > Laragon
+
 > Visual Studio Code
+
 > Discord
+
 > Xampp (MySQL, Apache)
+
 
 ## 🗄️ Configuración de Bases de Datos
 
