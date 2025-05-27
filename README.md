@@ -48,8 +48,7 @@ Este repositorio contiene el desarrollo técnico del sistema basado en microserv
 📦 perfulandia-microservices
 ├── usuarioservice
 ├── productoservice
-├── pedidoservice (Ejemplo)
-├── notificacionservice (Ejemplo)
+├── pedidoservice
 └── README.md
 
 ```
