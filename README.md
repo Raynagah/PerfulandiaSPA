@@ -24,7 +24,27 @@ Esto permite a Perfulandia SPA expandirse sin perder eficiencia ni calidad.
 
 ## 🧩 Arquitectura de Microservicios
 
-> 📝 Describir cómo está estructurado el sistema en microservicios. Pueden incluir un diagrama y explicar brevemente la función de cada servicio.
+Microservicios:
+
+Microservicio de Producto:
+  - Gestiona la información sobre productos (nombre, descripción, precio, cantidad, etc.).
+  - Interactúa con su propia base de datos para almacenar la información de los productos.
+  - Expone una API REST para crear, leer, actualizar y eliminar productos.
+
+Microservicio de Usuario:
+  - Maneja la gestión de usuarios (registro, inicio de sesión, perfiles, roles, etc.).
+  - Tiene su propia base de datos para almacenar los datos de los usuarios.
+  - Se integra con un sistema de autenticación (como JWT o OAuth) para asegurar las comunicaciones y operaciones sensibles.
+
+Microservicio de Pedido:
+
+  - Gestiona los pedidos de los usuarios (creación, estado del pedido, historial de pedidos, detalles de envío).
+  - Puede interactuar con los microservicios de Producto y Usuario a través de API REST o eventos asincrónicos para validar el stock de productos y la información   del cliente.
+
+Base de Datos por Servicio:
+  - Producto: Base de datos específica para almacenar la información de los productos.
+  - Usuario: Base de datos para almacenar los perfiles, credenciales y roles de los usuarios.
+  - Pedido: Base de datos para gestionar los pedidos, incluyendo detalles de los productos, cantidades, estado y usuario relacionado.
 
 ### Microservicios Desarrollados
 
@@ -34,7 +54,14 @@ Esto permite a Perfulandia SPA expandirse sin perder eficiencia ni calidad.
 
 ## 🛠️ Tecnologías Utilizadas
 
-> 📝 Listar las tecnologías y herramientas utilizadas en el proyecto (Spring Boot, Maven, MySQL, Postman, GitHub, etc.).
+> Spring Boot
+> Maven
+> Github
+> IA
+> Postman
+> Laragon
+> Visual Studio Code
+> Discord
 
 ## 🗄️ Configuración de Bases de Datos
 
@@ -70,7 +97,13 @@ Esto permite a Perfulandia SPA expandirse sin perder eficiencia ni calidad.
 
 ## 👥 Colaboración en GitHub
 
-> 📝 Explicar cómo se organizó el trabajo en ramas (`master`, `pruebas`), frecuencia de commits y cómo se coordinaron como equipo.
+Los primeros dos microservicios fueron creados durante clases, y luego dos personas (Rodrigo y Nicolás) replicaron ese proceso en repositorios separados. Finalmente, Nicolás integró ambos trabajos al repositorio principal.
+
+Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cuenta, mientras Nicolás le brindaba soporte a través de Discord.
+
+Informe: el informe fue elaborado principalmente por Rodrigo Vargas, con algunas contribuciones menores de Nicolás en ciertos aspectos.
+
+Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull requests, ya que la colaboración se hizo fuera de GitHub y no se usaron flujos convencionales de control de versiones en la plataforma.
 
 ## 📈 Lecciones Aprendidas
 
