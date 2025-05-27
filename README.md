@@ -15,8 +15,7 @@ Este repositorio contiene el desarrollo técnico del sistema basado en microserv
 
 - `usuarioservice`: > 📝 Describir qué funcionalidades ofrece este microservicio.
 - `productoservice`: > 📝 Describir qué funcionalidades ofrece este microservicio.
-- `________service`: > 📝 Indicar el nombre y función del microservicio adicional implementado.
-- `________service`: > 📝 Indicar el nombre y función del microservicio adicional implementado.
+- `pedidoservice`: > 📝 Indicar el nombre y función del microservicio adicional implementado.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -33,13 +32,12 @@ Este repositorio contiene el desarrollo técnico del sistema basado en microserv
 
 ## 🧑‍💻 Integrantes del Equipo
 
-> 📝 Indicar nombre completo y rol de cada integrante del equipo.
 
 | Nombre                  | Rol en el proyecto         | Servicio principal trabajado |
 |-------------------------|----------------------------|------------------------------|
-| Nombre del integrante 1 | (Ej: Backend - Usuarios)   | usuarioservice               |
-| Nombre del integrante 2 | (Ej: Backend - Productos)  | productoservice              |
-| Nombre del integrante 3 | (Ej:Repositorio)           | pedidoservice                |
+| Martín Baza             | Backend - Pedidos          | Pedidoservice                |
+| Nicolás Bello           | Repositorio, apoyo         | Pedidoservice                |
+| Rodrigo Vargas          | Gestión documentos         | Informe                      |
 
 ## 📂 Estructura del Repositorio
 
