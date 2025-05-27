@@ -66,9 +66,13 @@ Base de Datos por Servicio:
 ## 🛠️ Tecnologías Utilizadas
 
 > Spring Boot
+
 > Maven
+
 > Github
+
 > IA
+
 > Postman
 > Laragon
 > Visual Studio Code
