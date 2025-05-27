@@ -7,17 +7,18 @@ Este repositorio contiene el desarrollo técnico del sistema basado en microserv
 
 El sistema propuesto usa microservicios (Usuario, Producto y Pedido) para reemplazar el sistema monolítico actual.
 
-Problema que resuelve: El sistema monolítico presenta problemas de rendimiento y disponibilidad a medida que la empresa crece.
+Problema que resuelve: 
+El sistema monolítico presenta problemas de rendimiento y disponibilidad a medida que la empresa crece.
 
 Beneficios:
 
-Escalabilidad: Cada microservicio puede escalar según la demanda.
+  - Escalabilidad: Cada microservicio puede escalar según la demanda.
 
-Resiliencia: Un fallo en un microservicio no afecta a todo el sistema.
+  - Resiliencia: Un fallo en un microservicio no afecta a todo el sistema.
 
-Mantenimiento ágil: Actualizaciones sin afectar a todo el sistema.
-
-Mejor rendimiento: Respuestas más rápidas y eficaces.
+  - Mantenimiento ágil: Actualizaciones sin afectar a todo el sistema.
+  
+  - Mejor rendimiento: Respuestas más rápidas y eficaces.
 
 Esto permite a Perfulandia SPA expandirse sin perder eficiencia ni calidad.
 
