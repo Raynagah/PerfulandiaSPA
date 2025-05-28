@@ -118,9 +118,9 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 ## 🧑‍💻 Integrantes del Equipo
 
-| Nombre                  | Rol en el proyecto         | Servicio principal trabajado |
-|-------------------------|----------------------------|------------------------------|
-| Martín Baza             | Backend - Pedidos                       | pedidoservice               |
+| Nombre                  | Rol en el proyecto                      | Servicio principal trabajado|
+|-------------------------|-----------------------------------------|-----------------------------|
+| Martín Baza             | Backend - Pedidos (pendiente)           | pedidoservice               |
 | Nicolás Bello           | Repositorio, apoyo, Backend - carrito   | carritoservice              |
 | Rodrigo Vargas          | Gestión documentos, informe, readme     | Informe, readme             |
 
@@ -141,7 +141,7 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 Los primeros dos microservicios fueron creados durante clases, y luego dos personas (Rodrigo y Nicolás) replicaron ese proceso en repositorios separados. Finalmente, Nicolás integró ambos trabajos al repositorio principal.
 
-Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cuenta.
+Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cuenta (pendiente).
 
 Cuarto microservicio: Nicolás Bello desarrollo el cuarto microservicio por su cuenta.
 
