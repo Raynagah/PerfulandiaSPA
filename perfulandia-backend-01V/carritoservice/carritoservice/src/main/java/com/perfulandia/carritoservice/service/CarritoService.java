@@ -10,21 +10,26 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service  // Indica que esta clase contiene la lógica principal del carrito
 public class CarritoService {
-    private final CarritoRepository repository;
-    private final RestTemplate restTemplate;
+    private final CarritoRepository repository;  // Para hablar con la base de datos
+    private final RestTemplate restTemplate;    // Para comunicarse con otros servicios
 
-    @Value("${productos.service.url}")
+    @Value("${productos.service.url}")  // URL del servicio de productos (se configura en application.properties)
     private String productosServiceUrl;
 
+    // Constructor (Spring inyecta automáticamente las dependencias)
     public CarritoService(CarritoRepository repository, RestTemplate restTemplate) {
         this.repository = repository;
         this.restTemplate = restTemplate;
     }
 
+    // Obtiene el carrito de un usuario (lo crea si no existe)
     public Carrito obtenerCarritoPorUsuario(Long usuarioId) {
+        // Busca en la base de datos
         Carrito carrito = repository.findByUsuarioId(usuarioId);
+        
+        // Si no existe, crea uno nuevo
         if (carrito == null) {
             carrito = Carrito.builder()
                     .usuarioId(usuarioId)
@@ -34,7 +39,7 @@ public class CarritoService {
             repository.save(carrito);
         }
         
-        // Cargar productos actuales desde el servicio de productos
+        // Para cada ID de producto, obtiene sus detalles del servicio de productos
         List<Producto> productosActuales = new ArrayList<>();
         for (Long productoId : carrito.getProductosIds()) {
             try {
@@ -45,22 +50,25 @@ public class CarritoService {
                     productosActuales.add(producto);
                 }
             } catch (Exception e) {
-                // Log error pero continuar con otros productos
-                System.err.println("Error obteniendo producto ID: " + productoId);
+                System.err.println("Error al obtener producto ID: " + productoId);
             }
         }
+        
+        // Actualiza la lista de productos y calcula el total
         carrito.setProductos(productosActuales);
-        carrito.getTotal(); // Recalcula el total
+        carrito.getTotal();
         
         return carrito;
     }
 
+    // Añade un producto al carrito
     public Carrito agregarProducto(Long usuarioId, Producto producto) {
         if (producto == null || producto.getId() == null) {
             throw new IllegalArgumentException("Producto no válido");
         }
         
         Carrito carrito = obtenerCarritoPorUsuario(usuarioId);
+        // Evita duplicados
         if (!carrito.getProductosIds().contains(producto.getId())) {
             carrito.getProductosIds().add(producto.getId());
             carrito.getProductos().add(producto);
@@ -69,6 +77,7 @@ public class CarritoService {
         return carrito;
     }
 
+    // Elimina un producto del carrito
     public Carrito eliminarProducto(Long usuarioId, Long productoId) {
         Carrito carrito = obtenerCarritoPorUsuario(usuarioId);
         carrito.getProductosIds().remove(productoId);
@@ -76,6 +85,7 @@ public class CarritoService {
         return repository.save(carrito);
     }
 
+    // Vacía completamente el carrito
     public void vaciarCarrito(Long usuarioId) {
         Carrito carrito = obtenerCarritoPorUsuario(usuarioId);
         carrito.getProductosIds().clear();
