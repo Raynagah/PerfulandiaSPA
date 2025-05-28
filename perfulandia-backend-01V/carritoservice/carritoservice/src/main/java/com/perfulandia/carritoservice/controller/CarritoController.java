@@ -18,20 +18,21 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Slf4j
-@RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/carrito")
+@Slf4j  // Para registrar mensajes en el sistema
+@RestController  // Indica que esta clase maneja peticiones web
+@RequiredArgsConstructor  // Crea constructor con campos finales
+@RequestMapping("/api/carrito")  // Todas las rutas empiezan con esto
 public class CarritoController {
-    private final CarritoService servicio;
-    private final RestTemplate restTemplate;
+    private final CarritoService servicio;  // Lógica del carrito
+    private final RestTemplate restTemplate;  // Para llamar a otros servicios
 
-    @Value("${productos.service.url}")
+    @Value("${productos.service.url}")  // URL del servicio de productos
     private String productosServiceUrl;
 
-    @Value("${usuarios.service.url}")
+    @Value("${usuarios.service.url}")  // URL del servicio de usuarios
     private String usuariosServiceUrl;
 
+    // Clase auxiliar para devolver respuestas consistentes
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
@@ -42,6 +43,7 @@ public class CarritoController {
         private double total;
     }
 
+    // Obtiene el carrito de un usuario (GET /api/carrito/123)
     @GetMapping("/{usuarioId}")
     public ResponseEntity<CarritoResponse> obtenerCarrito(@PathVariable Long usuarioId) {
         Carrito carrito = servicio.obtenerCarritoPorUsuario(usuarioId);
@@ -53,12 +55,14 @@ public class CarritoController {
         ));
     }
 
+    // Añade un producto al carrito (POST /api/carrito/123/agregar/456)
     @PostMapping("/{usuarioId}/agregar/{productoId}")
     public ResponseEntity<?> agregarProducto(
             @PathVariable Long usuarioId,
             @PathVariable Long productoId) {
         
         try {
+            // Pregunta al servicio de productos si existe
             Producto producto = restTemplate.getForObject(
                 productosServiceUrl + "/api/productos/" + productoId,
                 Producto.class);
@@ -68,6 +72,7 @@ public class CarritoController {
                        .body("Producto no encontrado");
             }
             
+            // Si existe, lo añade al carrito
             Carrito carrito = servicio.agregarProducto(usuarioId, producto);
             return ResponseEntity.ok(new CarritoResponse(
                 carrito.getId(),
@@ -78,10 +83,11 @@ public class CarritoController {
         } catch (RestClientException e) {
             log.error("Error al comunicarse con el servicio de productos", e);
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
-                   .body("Error al comunicarse con el servicio de productos: " + e.getMessage());
+                   .body("Error al comunicarse con el servicio de productos");
         }
     }
 
+    // Elimina un producto del carrito (DELETE /api/carrito/123/eliminar/456)
     @DeleteMapping("/{usuarioId}/eliminar/{productoId}")
     public ResponseEntity<CarritoResponse> eliminarProducto(
             @PathVariable Long usuarioId,
@@ -95,10 +101,12 @@ public class CarritoController {
         ));
     }
 
+    // Genera un resumen bonito del carrito (GET /api/carrito/123/resumen)
     @GetMapping("/{usuarioId}/resumen")
     public ResponseEntity<String> obtenerResumen(@PathVariable Long usuarioId) {
         try {
             Carrito carrito = servicio.obtenerCarritoPorUsuario(usuarioId);
+            // Obtiene datos del usuario
             Usuario usuario = restTemplate.getForObject(
                 usuariosServiceUrl + "/api/usuarios/" + usuarioId,
                 Usuario.class);
@@ -108,29 +116,24 @@ public class CarritoController {
                        .body("Usuario no encontrado");
             }
             
+            // Construye un texto con toda la información
             StringBuilder resumen = new StringBuilder();
-            resumen.append(String.format(
-                "Carrito de %s\nTotal productos: %d\n\nDetalle:\n",
-                usuario.getNombre(),
-                carrito.getProductos().size()
-            ));
+            resumen.append("Carrito de " + usuario.getNombre() + "\n");
+            resumen.append("Total productos: " + carrito.getProductos().size() + "\n\n");
+            resumen.append("Detalle:\n");
             
-            carrito.getProductos().forEach(producto -> 
-    resumen.append(String.format(
-        "- %s: $%.2f\n",
-        producto.getNombre(),
-        producto.getPrecio()
-                ))
-            );
+            for (Producto p : carrito.getProductos()) {
+                resumen.append("- " + p.getNombre() + ": $" + p.getPrecio() + "\n");
+            }
             
-            resumen.append(String.format("\nTotal a pagar: $%.2f", carrito.getTotal()));
+            resumen.append("\nTotal a pagar: $" + carrito.getTotal());
             
             return ResponseEntity.ok(resumen.toString());
             
         } catch (RestClientException e) {
             log.error("Error al comunicarse con servicios externos", e);
             return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
-                   .body("Error al comunicarse con servicios externos: " + e.getMessage());
+                   .body("Error al obtener información");
         }
     }
 }
