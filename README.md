@@ -128,7 +128,7 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 ```
 
-📦 PerfulandiaSPA (Repositorio)
+📦 perfulandia-backend-01v
 ├── usuarioservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
 ├── productoservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
 ├── carritoservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
