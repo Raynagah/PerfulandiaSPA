@@ -1,11 +1,14 @@
 package com.perfulandia.carritoservice.model;
 
 import lombok.*;
-//DTO Data Transfer Object= Objeto de transferencia de datos: para simular la respuesta de MS
+
+// Información básica de un usuario
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Usuario {
-    private long id;
-    private String nombre,correo, rol;
+    private long id;       // Identificador único
+    private String nombre; // Ej: "María García"
+    private String correo; // Ej: "maria@ejemplo.com"
+    private String rol;    // Ej: "cliente" o "administrador"
 }
