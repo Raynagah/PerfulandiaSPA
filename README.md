@@ -5,7 +5,7 @@ Este repositorio contiene el desarrollo técnico del sistema basado en microserv
 
 ## 📦 Descripción General del Proyecto
 
-El sistema propuesto usa microservicios (Usuario, Producto y Pedido) para reemplazar el sistema monolítico actual.
+El sistema propuesto usa microservicios (Usuario, Producto y Carrito) para reemplazar el sistema monolítico actual.
 
 Problema que resuelve: 
 El sistema monolítico presenta problemas de rendimiento y disponibilidad a medida que la empresa crece.
@@ -34,12 +34,6 @@ Microservicio de Producto:
 Microservicio de Usuario:
   - Maneja la gestión de usuarios (id, nombre, correo, rol).
   - Tiene su propia base de datos para almacenar los datos de los usuarios.
-
-Microservicio de Pedido:
-
-  - Gestiona los pedidos de los usuarios (creación, estado del pedido, historial de pedidos, detalles de envío).
-  - Puede interactuar con los microservicios de Producto y Usuario a través de API REST o eventos asincrónicos para validar el stock de productos y la información   del cliente.
-
 
 Microservicio de Carrito:
 
