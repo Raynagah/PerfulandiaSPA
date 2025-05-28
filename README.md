@@ -120,9 +120,9 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 | Nombre                  | Rol en el proyecto         | Servicio principal trabajado |
 |-------------------------|----------------------------|------------------------------|
-| Martín Baza             | Backend - Pedidos          | pedidoservice               |
-| Nicolás Bello           | Repositorio, apoyo         | carritoservice                |
-| Rodrigo Vargas          | Gestión documentos         | Informe                      |
+| Martín Baza             | Backend - Pedidos                       | pedidoservice               |
+| Nicolás Bello           | Repositorio, apoyo, Backend - carrito   | carritoservice              |
+| Rodrigo Vargas          | Gestión documentos, informe, readme     | Informe, readme             |
 
 ## 📂 Estructura del Repositorio
 
@@ -141,7 +141,7 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 Los primeros dos microservicios fueron creados durante clases, y luego dos personas (Rodrigo y Nicolás) replicaron ese proceso en repositorios separados. Finalmente, Nicolás integró ambos trabajos al repositorio principal.
 
-Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cuenta, mientras Nicolás le brindaba soporte a través de Discord.
+Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cuenta.
 
 Cuarto microservicio: Nicolás Bello desarrollo el cuarto microservicio por su cuenta.
 
@@ -156,4 +156,6 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 ---
 
 [Guía Oficial en Notion – Evaluación Parcial 2 (35%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
+
+Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
 
