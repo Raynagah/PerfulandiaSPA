@@ -58,10 +58,9 @@ Base de Datos por Servicio:
 
 ### Microservicios Desarrollados
 
-- `usuarioservice`: > 📝 Describir qué funcionalidades ofrece este microservicio.
-- `productoservice`: > 📝 Describir qué funcionalidades ofrece este microservicio.
-- `pedidoservice`: > 📝 Indicar el nombre y función del microservicio adicional implementado.
-- `carritoservice`: > 📝 Indicar el nombre y función del microservicio adicional implementado.
+- `usuarioservice`: Este microservicio nos permite visualizar, agregar y eliminar usuarios dentro del sistema.
+- `productoservice`: Este microservicio nos permite visualizar, agregar y eliminar productos, además de consultar usuarios desde el mismo microservicio.
+- `carritoservice`: Este microservicio nos permite generar un carrito de compras, con el nombre del usuario, su id, id's del o los productos y el total a pagar por el mismo.
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -86,33 +85,55 @@ Base de Datos por Servicio:
 
 ## 🗄️ Configuración de Bases de Datos
 
-> 📝 Indicar qué motor de base de datos usaron, cómo configuraron la conexión (`application.properties`), y qué tablas y campos definieron para cada microservicio.
+- Para este proyecto utilizamos como motor de base de datos MySQL. Para la realización de las conexiones entre microservicios utilizamos SpringBoot en nuestro archivo application.properties, que nos permitió definir  rutas, puertos, nombres de usuario y contraseñas para gestionar la comunicación entre microservicios correctamente. Dentro de otros aspectos que no son menos importantes dentro del archivo tenemos propiedades de Spring que nos permiten mantener todo actualizado comparando entidades y clases de Java para realizar cambios (o adiciones) automáticos de ser necesario. 
+Finalmente dicho archivo contiene líneas de código que nos apoyan en la depuración del código, ayudando a que nuestro trabajo resulte más pulcro mientras progresa.
+- Para el microservicio de productoservice (perfulandia_usuarios_01v): Esta BD se utiliza para almacenar productos (en este caso perfumes) con sus respectivos atributos, tales como id, nombre, precio y  stock.
+- Para el microservicio de usuarioservice (perfulandia_productos_01v): Esta BD se utiliza para almacenar usuarios con sus respectivos atributos dentro del sistema, tales como id, nombre, correo y rol dentro del sistema.
+- Para el microservicio de carritoservice (perfulandia_carritos_01v): Esta BD se utiliza para generar un carrito de compras mediante la comunicación con los 2 microservicios previamente mencionados. Crea un “carrito” con la id del mismo, el nombre del cliente, su id, la id del o los productos que se hayan agregado, y el total de la compra (en dólares).
 
 ## 📮 Endpoints y Pruebas
 
-> 📝 Especificar los principales endpoints disponibles por microservicio (CRUD y llamadas entre servicios).  
-> Incluir capturas o descripciones de pruebas realizadas con Postman (mínimo 3 por micro-servicio).
+| Microservicio            | Endpoints                                   |
+|--------------------------|---------------------------------------------|
+| usuarioservice           | GET http://localhost:8081/api/usuarios, POST http://localhost:8081/api/usuarios, GET http://localhost:8081/api/usuarios/{id}, DELETE http://localhost:8081/api/usuarios/{id}|
+| productoservice          | POST http://localhost:8082/api/productos, GET http://localhost:8082/api/productos/{id}, DELETE http://localhost:8082/api/productos/{{id}}, GET http://localhost:8082/api/productos/usuario/{{id}}                        |
+| carritoservice           | GET http://localhost:8083/api/carrito/4, GET http://localhost:8083/api/carrito/4/resumen, POST http://localhost:8083/api/carrito/4/agregar/4, POST http://localhost:8083/api/carrito/4/agregar/5, DELETE http://localhost:8083/api/carrito/4/eliminar/5               |
+
+---
+
+- Descripción de cada Endpoint en el microservicio usuarioservice: 
+  1) Método GET para el microservicio de Usuario: Se espera que este método nos entregue todos los usuarios existentes en la base de datos. En el ejemplo no hay ninguno pero la respuesta es de código 200 por lo que podemos ver que la ejecución ha sido exitosa.
+  2) Método POST para el microservicio de Usuario: En este caso ingresamos un nuevo usuario mediante este método y lo que se espera es que al momento de enviar los datos en formato JSON el sistema nos entregue un código 200 y además poder visualizar al usuario que acabamos de ingresar en la parte inferior de la ventana.
+  3) Método DELETE para el microservicio de Usuario: A diferencia de los 2 métodos utilizados previamente, en la barra de ingreso de url debemos incorporar la ID del usuario que queramos eliminar de nuestra base de datos. En este caso esperamos que en la parte inferior de la ventana nos entregue un código 200 y que luego corroborando con el método GET que busca por ID no veamos a dicho usuario.
+- Descripción de cada Endpoint en el microservicio productoservice:
+  1) Método GET para el microservicio de Producto: Método GET para el microservicio de Producto: Se espera que este método nos entregue todos los productos existentes en la base de datos. En el ejemplo hay uno, la respuesta es de código 200 y en la parte inferior de la ventana podemos ver dicho producto, por ende, podemos afirmar que la ejecución ha sido exitosa.
+  2) Método POST para el microservicio de Producto: En este caso ingresamos un nuevo producto mediante este método y lo que se espera es que al momento de enviar los datos en formato JSON el sistema nos entregue un código 200 y además poder visualizar el producto que acabamos de ingresar en la parte inferior de la ventana.
+  3) Método DELETE para el microservicio de Producto:  A diferencia de los 2 métodos utilizados previamente, en la barra de ingreso de url debemos incorporar la ID del producto que queramos eliminar de nuestra base de datos. En este caso esperamos que en la parte inferior de la ventana nos entregue un código 200 y que luego corroborando con el método GET que busca por ID no veamos dicho producto.
+- Descripción de cada Endpoint en el microservicio carritoservice:
+  1) Método GET para la creación de un carrito de compras: Esta función nos permite asignarle un carrito a un usuario en específico. Este carrito como tal posee ciertos atributos tales como la ID del usuario que lo posee, una lista con los productos que esté agregando y el total de la compra.
+  2) Método GET para mostrar el resumen del carrito de compras de un usuario en específico: La función resumen nos permite ver el carrito de un usuario, mostrando su nombre, apellido paterno, el total de productos que contiene el carrito, y  el detalle. Este último incluye netamente la cantidad total de dinero que el usuario debería pagar por ese carrito.
+  3) Método GET para ver el resumen y resultado de la adición de 2 productos distintos al carrito de compras del usuario con ID 4.
+  4) Método POST para agregar un producto al carrito de compras de un usuario: En este caso, esta función nos permite agregar un producto mediante su ID al carrito de un usuario en específico. Mostrando posteriormente la información actualizada del mismo.
+  5) Método DELETE para eliminar un producto específico del carrito de compras de un usuario con ID 4: Esta funcionalidad nos permite buscar un producto dentro del carrito de compras de un usuario en específico y mediante la ID de ese producto eliminarlo del mismo.
 
 ## 🧑‍💻 Integrantes del Equipo
 
-
 | Nombre                  | Rol en el proyecto         | Servicio principal trabajado |
 |-------------------------|----------------------------|------------------------------|
-| Martín Baza             | Backend - Pedidos          | Pedidoservice                |
-| Nicolás Bello           | Repositorio, apoyo         | Pedidoservice                |
+| Martín Baza             | Backend - Pedidos          | pedidoservice               |
+| Nicolás Bello           | Repositorio, apoyo         | carritoservice                |
 | Rodrigo Vargas          | Gestión documentos         | Informe                      |
 
 ## 📂 Estructura del Repositorio
 
-> 📝 Explicar brevemente la organización de carpetas del repositorio (por ejemplo, cada carpeta corresponde a un microservicio separado con su propio `pom.xml`).
-
 ```
 
-📦 perfulandia-microservices
-├── usuarioservice
-├── productoservice
-├── pedidoservice
-└── README.md
+📦 PerfulandiaSPA (Repositorio)
+├── usuarioservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
+├── productoservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
+├── carritoservice (Carpeta correspondiente al microservicio junto a todos los elementos que lo componen)
+├── LICENSE (Archivo correspondiente a la licencia de distribución)
+└── README.md (Este archivo)
 
 ```
 
@@ -130,8 +151,8 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 
 ## 📈 Lecciones Aprendidas
 
-> 📝 Reflexionar brevemente sobre qué aprendieron durante el desarrollo del proyecto (técnico y en trabajo en equipo).
-
+- Para esta segunda evaluación hemos aprendido a manejar programas como Laragon, Xampp y POSTMAN, que nos han resultado en complementos muy útiles para la realización de las distintas tareas relacionadas netamente a la creación de los distintos microservicios que Martin y Nicolás han realizado. Es por ello que nos sentimos satisfechos con el resultado del trabajo que llevamos hasta la fecha, pero coincidimos en que siempre hay espacio para realizar futuras mejoras y entregar un producto o servicio mucho más pulcro, eficiente y satisfactorio para los usuarios finales/clientes.
+- Haciendo referencia al trabajo en equipo de esta segunda entrega, estamos de acuerdo en forma unánime en que la distribución de las tareas por cada integrante ha sido realmente equitativa, y planeamos continuar de la misma forma, con la adición de pequeños cambios para la realización del tercer informe.
 ---
 
 [Guía Oficial en Notion – Evaluación Parcial 2 (35%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
