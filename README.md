@@ -76,6 +76,14 @@ Base de Datos por Servicio:
 
 > Xampp (MySQL, Apache)
 
+> JUnit
+
+> Mockito
+
+> Swagger UI / OpenAPI
+
+> HATEOAS
+
 
 ## 🗄️ Configuración de Bases de Datos
 
