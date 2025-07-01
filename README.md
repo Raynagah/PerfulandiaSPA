@@ -172,7 +172,7 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 
 [Guía Oficial en Notion – Evaluación Parcial 2 (35%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
 
-[Guía Oficial en Notion – Evaluación Parcial 3 (40%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
+[Guía Oficial en Notion – Evaluación Parcial 3 (40%)](https://quilt-canary-969.notion.site/Gu-a-Evaluaci-n-Parcial-3-Desarrollo-Full-Stack-I-2165b3c4e3128066945fcc08ab81ce01)
 
 Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
 
