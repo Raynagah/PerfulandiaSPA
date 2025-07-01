@@ -165,9 +165,9 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 
 - Gestión de Bases de Datos: Implementamos bases de datos independientes para cada microservicio (MySQL en Laragon), optimizando consultas y evitando cuellos de botella.
 
--Documentación y Pruebas: Utilizamos Swagger (OpenAPI) para documentar APIs y JUnit/Mockito para pruebas unitarias, asegurando la calidad del código y la claridad en la comunicación entre servicios.
+- Documentación y Pruebas: Utilizamos Swagger (OpenAPI) para documentar APIs y JUnit/Mockito para pruebas unitarias, asegurando la calidad del código y la claridad en la comunicación entre servicios.
 
--Trabajo en Equipo: Coordinamos roles y responsabilidades para desarrollar módulos críticos como CarritoService, ProductoService, y UsuarioService, integrando sus funcionalidades de manera eficiente.
+- Trabajo en Equipo: Coordinamos roles y responsabilidades para desarrollar módulos críticos como CarritoService, ProductoService, y UsuarioService, integrando sus funcionalidades de manera eficiente.
 ---
 
 [Guía Oficial en Notion – Evaluación Parcial 2 (35%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
