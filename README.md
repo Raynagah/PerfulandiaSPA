@@ -120,11 +120,11 @@ Finalmente dicho archivo contiene líneas de código que nos apoyan en la depura
 
 ## 🧑‍💻 Integrantes del Equipo
 
-| Nombre                  | Rol en el proyecto                      | Servicio principal trabajado|
-|-------------------------|-----------------------------------------|-----------------------------|
-| Martín Baza             | Backend - Pedidos (pendiente)           | pedidoservice               |
-| Nicolás Bello           | Repositorio, apoyo, Backend - carrito   | carritoservice              |
-| Rodrigo Vargas          | Gestión documentos, informe, readme     | Informe, readme             |
+| Nombre                  | Rol en el proyecto                      | Servicio principal trabajado                        |
+|-------------------------|-----------------------------------------|-----------------------------------------------------|
+| Martín Baza             | Backend - Pedidos (pendiente)           | pedidoservice, Informe, Swagger UI / OpenAPI        |
+| Nicolás Bello           | Repositorio, apoyo, Backend - carrito   | carritoservice, Informe , readme, testing           |
+| Rodrigo Vargas          | Gestión documentos, informe, readme     | Informe, readme, Swagger UI / OpenAPI, HATEOAS      |
 
 ## 📂 Estructura del Repositorio
 
