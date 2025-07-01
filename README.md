@@ -147,17 +147,32 @@ Tercer microservicio: Martín Baza desarrolló el tercer microservicio por su cu
 
 Cuarto microservicio: Nicolás Bello desarrollo el cuarto microservicio por su cuenta.
 
-Informe: el informe fue elaborado principalmente por Rodrigo Vargas, con algunas contribuciones menores de Nicolás en ciertos aspectos.
+Swagger UI / OpenAPI, HATEOAS: Rodrigo Vargas desarrollo este apartado en su mayoria con contribuciones menores de Martín Baza
+
+Informe: el informe fue elaborado principalmente por Rodrigo Vargas, con algunas contribuciones de Nicolás y Martín Baza.
 
 Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull requests (Solo algunos básicos, como cambios al readme o la implementación del microservicio ya finalizado), ya que la colaboración se hizo fuera de GitHub, ademas de repartir el trabajo, por lo que cada uno trabajo en su respectivo entorno.
 
 ## 📈 Lecciones Aprendidas
 
 - Para esta segunda evaluación hemos aprendido a manejar programas como Laragon, Xampp y POSTMAN, que nos han resultado en complementos muy útiles para la realización de las distintas tareas relacionadas netamente a la creación de los distintos microservicios que Martin y Nicolás han realizado. Es por ello que nos sentimos satisfechos con el resultado del trabajo que llevamos hasta la fecha, pero coincidimos en que siempre hay espacio para realizar futuras mejoras y entregar un producto o servicio mucho más pulcro, eficiente y satisfactorio para los usuarios finales/clientes.
+  
 - Haciendo referencia al trabajo en equipo de esta segunda entrega, estamos de acuerdo en forma unánime en que la distribución de las tareas por cada integrante ha sido realmente equitativa, y planeamos continuar de la misma forma, con la adición de pequeños cambios para la realización del tercer informe.
+  
+- Arquitectura de Microservicios: Comprendimos la importancia de migrar de un sistema monolítico a una arquitectura basada en microservicios para mejorar la escalabilidad, mantenibilidad y resiliencia del sistema.
+
+- Integración de Tecnologías: Aprendimos a utilizar herramientas como Spring Boot, Docker, Kafka, y APIs REST para desarrollar microservicios independientes pero interoperables.
+
+- Gestión de Bases de Datos: Implementamos bases de datos independientes para cada microservicio (MySQL en Laragon), optimizando consultas y evitando cuellos de botella.
+
+-Documentación y Pruebas: Utilizamos Swagger (OpenAPI) para documentar APIs y JUnit/Mockito para pruebas unitarias, asegurando la calidad del código y la claridad en la comunicación entre servicios.
+
+-Trabajo en Equipo: Coordinamos roles y responsabilidades para desarrollar módulos críticos como CarritoService, ProductoService, y UsuarioService, integrando sus funcionalidades de manera eficiente.
 ---
 
 [Guía Oficial en Notion – Evaluación Parcial 2 (35%)](https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4)
+
+[Guía Oficial en Notion – Evaluación Parcial 3 (40%)]([https://quilt-canary-969.notion.site/Gu-a-Oficial-Evaluaci-n-Parcial-2-35-1f75b3c4e31280aaab79c9a71f1cfb7b?pvs=4])
 
 Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
 
