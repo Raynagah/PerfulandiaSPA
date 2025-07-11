@@ -180,6 +180,8 @@ Link video uso microservicio desplegado: https://youtu.be/VVvvo7KFjcI
 ENDSPOINT DESPLIEGUE:
 
   ---- Crear usuarios
+
+  
   Post
   https://usuarioprefulandia-1.onrender.com/api/usuarios
 
@@ -210,6 +212,8 @@ ENDSPOINT DESPLIEGUE:
   
   
   --- Ver usuarios
+
+  
   GET
   
   https://usuarioprefulandia-1.onrender.com/api/usuarios
