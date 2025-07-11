@@ -175,4 +175,89 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 [Guía Oficial en Notion – Evaluación Parcial 3 (40%)](https://quilt-canary-969.notion.site/Gu-a-Evaluaci-n-Parcial-3-Desarrollo-Full-Stack-I-2165b3c4e3128066945fcc08ab81ce01)
 
 Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
+Link video uso microservicio desplegado: https://youtu.be/VVvvo7KFjcI
 
+ENDSPOINT DESPLIEGUE:
+  ---- Crear usuarios
+  Post
+  https://usuarioprefulandia-1.onrender.com/api/usuarios
+  BODY -> RAW -> json:
+  
+  {
+      "nombre": "Rodrigo Vargas",
+      "correo": "Ro.vargas@duocUC.cl",
+      "rol": "CLIENTE"
+  }
+  
+  {
+  
+  	"nombre": "Nicolás Bello",
+          "correo": "Ni.bello@duocUC.cl",
+          "rol": "CLIENTE"
+  }
+  
+  {
+  	"nombre": "Martin Baza",
+          "correo": "ma.baza@duocUC.com",
+          "rol": "CLIENTE"
+  }
+  
+  
+  --- Ver usuarios
+  GET
+  https://usuarioprefulandia-1.onrender.com/api/usuarios
+  
+  
+  
+  ---Crear perfumes
+  https://productoprefulandia.onrender.com/api/productos
+  
+  BODY -> RAW -> json:
+  {
+          "nombre": "Acqua di Giò - Giorgio Armani",
+          "precio": 110.75,
+          "stock": 20
+      }
+  
+  {
+          "nombre": "Sauvage - Dior",
+          "precio": 129.99,
+          "stock": 25
+      }
+  
+  {
+          "nombre": "Light Blue - Dolce&Gabbana",
+          "precio": 89.5,
+          "stock": 40
+      }
+  
+  {
+          "nombre": "Black Opium - Yves Saint Laurent",
+          "precio": 95.0,
+          "stock": 30
+      }
+  
+  {
+          "nombre": "Flowerbomb - Viktor&Rolf",
+          "precio": 102.25,
+          "stock": 15
+      }
+  
+  
+  ---Ver perfumes
+  GET
+  https://productoprefulandia.onrender.com/api/productos
+  
+  
+  --Añadir producto al carrito
+  POST
+  https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/agregar/2(id_producto)
+  
+  ---Ver resumen carrito
+  GET
+  https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/resumen
+  
+  
+  --Eliminar producto del carrito 
+  DELETE
+  https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/eliminar/2(id_producto)
