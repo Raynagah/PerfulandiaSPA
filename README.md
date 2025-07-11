@@ -178,10 +178,14 @@ Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
 Link video uso microservicio desplegado: https://youtu.be/VVvvo7KFjcI
 
 ENDSPOINT DESPLIEGUE:
+
   ---- Crear usuarios
   Post
   https://usuarioprefulandia-1.onrender.com/api/usuarios
+
+  
   BODY -> RAW -> json:
+  
   
   {
   
@@ -207,12 +211,14 @@ ENDSPOINT DESPLIEGUE:
   
   --- Ver usuarios
   GET
+  
   https://usuarioprefulandia-1.onrender.com/api/usuarios
   
   
   
   ---Crear perfumes
   https://productoprefulandia.onrender.com/api/productos
+
   
   BODY -> RAW -> json:
   {
@@ -252,19 +258,32 @@ ENDSPOINT DESPLIEGUE:
   
   
   ---Ver perfumes
+
+  
   GET
   https://productoprefulandia.onrender.com/api/productos
+
   
   
   --Añadir producto al carrito
+
+  
   POST
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/agregar/2(id_producto)
+
+
   
   ---Ver resumen carrito
+
+  
   GET
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/resumen
+
+
   
   
-  --Eliminar producto del carrito 
+  --Eliminar producto del carrito
+
+  
   DELETE
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/eliminar/2(id_producto)
