@@ -183,6 +183,8 @@ ENDSPOINT DESPLIEGUE:
 
   
   Post
+
+  
   https://usuarioprefulandia-1.onrender.com/api/usuarios
 
   
@@ -221,6 +223,8 @@ ENDSPOINT DESPLIEGUE:
   
   
   ---Crear perfumes
+
+  
   https://productoprefulandia.onrender.com/api/productos
 
   
@@ -265,6 +269,8 @@ ENDSPOINT DESPLIEGUE:
 
   
   GET
+
+  
   https://productoprefulandia.onrender.com/api/productos
 
   
@@ -273,6 +279,8 @@ ENDSPOINT DESPLIEGUE:
 
   
   POST
+
+  
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/agregar/2(id_producto)
 
 
@@ -281,6 +289,8 @@ ENDSPOINT DESPLIEGUE:
 
   
   GET
+
+  
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/resumen
 
 
@@ -290,4 +300,6 @@ ENDSPOINT DESPLIEGUE:
 
   
   DELETE
+
+  
   https://carritoprefulandia.onrender.com/api/carrito/2(id_usuario)/eliminar/2(id_producto)
