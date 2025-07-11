@@ -175,6 +175,8 @@ Colaboración fuera de GitHub: No fue necesario usar ramas ni hacer pull request
 [Guía Oficial en Notion – Evaluación Parcial 3 (40%)](https://quilt-canary-969.notion.site/Gu-a-Evaluaci-n-Parcial-3-Desarrollo-Full-Stack-I-2165b3c4e3128066945fcc08ab81ce01)
 
 Link video uso microservicio carrito: https://youtu.be/Ju3OVqRo3WA
+
+
 Link video uso microservicio desplegado: https://youtu.be/VVvvo7KFjcI
 
 ENDSPOINT DESPLIEGUE:
