@@ -184,6 +184,7 @@ ENDSPOINT DESPLIEGUE:
   BODY -> RAW -> json:
   
   {
+  
       "nombre": "Rodrigo Vargas",
       "correo": "Ro.vargas@duocUC.cl",
       "rol": "CLIENTE"
@@ -197,6 +198,7 @@ ENDSPOINT DESPLIEGUE:
   }
   
   {
+  
   	"nombre": "Martin Baza",
           "correo": "ma.baza@duocUC.com",
           "rol": "CLIENTE"
@@ -214,30 +216,35 @@ ENDSPOINT DESPLIEGUE:
   
   BODY -> RAW -> json:
   {
+  
           "nombre": "Acqua di Giò - Giorgio Armani",
           "precio": 110.75,
           "stock": 20
       }
   
   {
+  
           "nombre": "Sauvage - Dior",
           "precio": 129.99,
           "stock": 25
       }
   
   {
+  
           "nombre": "Light Blue - Dolce&Gabbana",
           "precio": 89.5,
           "stock": 40
       }
   
   {
+  
           "nombre": "Black Opium - Yves Saint Laurent",
           "precio": 95.0,
           "stock": 30
       }
   
   {
+  
           "nombre": "Flowerbomb - Viktor&Rolf",
           "precio": 102.25,
           "stock": 15
